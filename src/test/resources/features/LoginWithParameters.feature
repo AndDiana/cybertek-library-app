@@ -1,5 +1,4 @@
 
-@wip
 Feature: Login with different credentials
 
   User Story : As a user I should be able to login with different credentials

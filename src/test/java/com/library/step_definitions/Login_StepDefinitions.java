@@ -2,6 +2,7 @@ package com.library.step_definitions;
 
 import com.library.pages.LoginPage;
 import com.library.pages.MainPage;
+import com.library.pages.UsersPage;
 import com.library.utilities.ConfigurationReader;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Login_StepDefinitions {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+    UsersPage usersPage = new UsersPage();
     LoginPage loginPage = new LoginPage();
     MainPage mainPage = new MainPage();
 
@@ -97,5 +99,26 @@ public class Login_StepDefinitions {
     public void userEntersLibrarianUsernameAndPassword(String arg0, String arg1) {
         loginPage.emailField.sendKeys(arg0);
         loginPage.passwordField.sendKeys(arg1);
+    }
+
+    @When("user enters {string} and {string}")
+    public void userEntersAnd(String arg0, String arg1) {
+        loginPage.emailField.sendKeys(arg0);
+        loginPage.passwordField.sendKeys(arg1);
+        loginPage.signInButton.click();
+        
+    }
+
+    @Then("account holder name should be {string}")
+    public void accountHolderNameShouldBe(String arg0) {
+
+
+        String expectedAccountName = arg0;
+        String actualAccountName  = usersPage.accountName.getText();
+
+        Assert.assertEquals(actualAccountName, expectedAccountName);
+
+        Driver.closeDriver();
+
     }
 }

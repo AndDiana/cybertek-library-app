@@ -20,5 +20,8 @@ public class MainPage {
     @FindBy(xpath = "//h2[@id = 'user_count']")
     public WebElement userCount;
 
+    @FindBy(linkText = "Users")
+    public WebElement usersTab;
+
 
 }
