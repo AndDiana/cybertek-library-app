@@ -4,7 +4,7 @@ Feature: Login with different credentials
   User Story : As a user I should be able to login with different credentials
 
 
-  @lib20
+  @smoke
   Scenario: Login as librarian 20
     Given user is on the login page
     When user enters librarian username "librarian20@library"
@@ -14,7 +14,7 @@ Feature: Login with different credentials
     And user should see the dashboard tab
 
 
- @student20
+  @smoke
   Scenario: Login as student 20
     Given user is on the login page
     When user enters student username "student20@library"
@@ -23,7 +23,7 @@ Feature: Login with different credentials
     Then user should see the books tab
 
 
-   @lib
+  @smoke
     Scenario: Login as librarian in the same line
     Given user is on the login page
     When user enters librarian username "librarian20@library" and password "XXJTMgzA"

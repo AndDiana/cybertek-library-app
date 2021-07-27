@@ -4,7 +4,7 @@ Feature: Login with different credentials
   correct emails and passwords. When I login, I should be able to see username
   in the account username section.
 
-  @wip
+  @smoke
   Scenario Outline:
     Given user is on the login page
     When user enters "<username>" and "<password>"

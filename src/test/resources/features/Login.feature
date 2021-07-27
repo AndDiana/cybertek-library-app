@@ -8,13 +8,13 @@ Feature: Library login feature
   Background: Assuming user is on the login page
     Given user is on the login page
 
-  @librarian
+  @smoke
   Scenario: Login as librarian
     Given user is on the login page
     When user enters valid librarian username and password
     Then user should see the dashboard tab
 
-  @student
+  @smoke
   Scenario: Login as student
     Given user is on the login page
     When user enters valid student username and password

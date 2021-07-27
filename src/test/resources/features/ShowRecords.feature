@@ -1,6 +1,6 @@
 Feature: Show records feature
 
-
+  @smoke
   Scenario: verify show records dropdown values
     Given user is on the login page
     When user enters valid librarian username and password
